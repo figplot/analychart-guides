@@ -1,17 +1,21 @@
 ---
-title: Get CHART
-description: 最简单的无代码的图表绘制工具。
+title: 介绍
+description: AnalyCHART - 最简单的图表绘制工具。
 ---
 
 图表是直观展示数据，洞察数据的方式。当我们需要分析数据变化，理解数据趋势时，经常会使用图表。
 
-[AnalyCHART](/) 采用简单和易于理解的交互形式来绘制动态图表，不用任何代码，并且提供了大量的可复用的[示例](/zh/examples)。您可以直接在我们的网站上通过图表来理解您的数据，也可以把图表下载下来，在其他地方使用。
+[AnalyCHART](/zh) 采用简单和易于理解的交互形式来绘制动态图表，不用任何代码，并且提供了大量的可复用的[示例](/zh/examples)。您可以直接在我们的网站上通过图表来理解您的数据，也可以把图表下载下来，在其他地方使用。
 
 ## 特性
 
-**简单直观的UI交互，无需代码**
+**简单直观的UI交互，无需任何编程知识**
 
-和其他通过脚本绘制图表的工具不同，[AnalyCHART](/) 通过UI选项来控制图表的生成，并且采用了非常简单的UI设计，操作使用直观、易于理解。
+和其他通过脚本绘制图表的工具不同，[AnalyCHART](/zh) 通过UI选项来控制图表的生成，并且采用了非常简单的UI设计，操作使用直观、易于理解。
+
+**提供两种模式和大量的模版**
+
+支持基础和高级两种模式，对于大多数情况，使用基础模式并配合内置的模版即可生成令人满意的图表。
 
 **动态渲染**
 
@@ -25,31 +29,132 @@ description: 最简单的无代码的图表绘制工具。
 
 首先，您需要准备数据。
 
-[AnalyCHART](/) 支持的数据来源可以是来自本地或者网络URL的 CSV/Excel 文件，还可以直接在文本框输入。
+[AnalyCHART](/zh) 支持的数据来源可以是来自本地或者网络URL的JSON/CSV/Excel文件，还可以直接在文本框输入。
 
 通过下面的组件框进行上传或者输入数据：
 
-![](/images/uploader.png)
+<Image
+  src="/images/uploader.png"
+  width="620"
+  height="213"
+  className="rounded-md border [&:not(:first-child)]:mt-6"
+/>
 
-数据输入后，您可以点击该数据栏，查看数据的内容。
+比如，我们上传如下内容的 JSON 文件：
 
-![](/images/data-preview.png)
+```json
+[
+  { "month": "January", "desktop": 186, "mobile": 80 },
+  { "month": "February", "desktop": 305, "mobile": 200 },
+  { "month": "March", "desktop": 237, "mobile": 120 },
+  { "month": "April", "desktop": 73, "mobile": 190 },
+  { "month": "May", "desktop": 209, "mobile": 130 },
+  { "month": "June", "desktop": 214, "mobile": 140 }
+]
+```
+
+数据输入后，您可以点击该数据栏，查看数据的内容。也可以替换或者删除该数据。
+
+<Image
+  src="/images/data-uploaded.png"
+  width="679"
+  height="193"
+  className="rounded-md border [&:not(:first-child)]:mt-6"
+/>
+
+<Image
+  src="/images/data-preview.png"
+  width="1018"
+  height="588"
+  className="rounded-md border [&:not(:first-child)]:mt-6"
+/>
 
 现在，您就可以绘制图表了。
 
-绘制图表通过下面这样的选项面板来做到
+[AnalyCHART](/zh) 支持一系列的图表样式，包括折线图、面积图、柱形图、条形图、散点图、饼图、蜡烛图、地图等等，更多的样式正在支持中。每种样式由一系列类似的选项进行控制。您可以通过类似的操作方式完成不同的图表绘制。
 
-![](/images/draw.png)
+绘制图表有基础和高级两种模式。选择图表样式后，默认会进入基础模式。
 
-[AnalyCHART](/) 支持一系列的图表样式，包括线图、面积图、柱状图、散点图、饼图、蜡烛图等等，更多的样式正在支持中。每种样式由一系列类似的选项进行控制。因此，您可以通过修改这些选项的值来直接绘制图表。
+下面以折线图为例给大家介绍。
 
-更为简单的方式是查看[示例](/zh/examples)，找到您期望效果的类似的图表。点击「编辑」，然后在打开的页面直接替换数据，即可完成初步的绘制。
+### 基础模式
 
-比如，我们使用「Line Chart - Label」这个示例
+在基础模式下，主要通过从模版中选择固定的样式风格来快速完成绘制。
 
-![](/images/example-line-label.png)
+选择折线图样式后，界面为
 
-您可以在此基础上，调整一些选项，以达到您期望的效果。
+<Image
+  src="/images/basic-mode-line-1.png"
+  width="677"
+  height="626"
+  className="rounded-md border [&:not(:first-child)]:mt-6"
+/>
+
+绘图分为4个步骤：
+
+1. 选择坐标轴和数据的列
+2. 选择配色方案
+3. 通过模版选择图表的样式风格
+4. 选择附加信息的可见性
+
+选择完之后，可以在右侧看到绘制的结果
+
+<Image
+  src="/images/basic-mode-line-2.png"
+  width="1380"
+  height="600"
+  className="rounded-md border [&:not(:first-child)]:mt-6"
+/>
+
+就是这么简单，现在您已经可以点击「下载」按钮来下载图表。
+
+### 高级模式
+
+对于通常的数据可视化需求，基础模式即可满足。但如果您对样式有一些细节的调整需求，无法通过配色和模版来做到，那么可以使用高级模式。
+
+点击下方的「更多选项」，或者通过上面的「高级」按钮也可以进行切换。
+
+在高级模式下，绘制图表通过下面这样的选项面板来控制
+
+<Image
+  src="/images/advanced-mode-line-1.png"
+  width="680"
+  height="626"
+  className="rounded-md border [&:not(:first-child)]:mt-6"
+/>
+
+可以把选项面板折叠起来。对于折线图，有坐标轴、线的图层、布局、描述信息几个选项面板。通过这些面板，可以完成坐标轴线样式、线的各种样式、整个图表的边距和网格、图表的标题和描述、提示框和图例等等元素的调整。
+
+<Image
+  src="/images/advanced-mode-line-2.png"
+  width="680"
+  height="477"
+  className="rounded-md border [&:not(:first-child)]:mt-6"
+/>
+
+比如我们调整成如下的效果。
+
+<Image
+  src="/images/advanced-mode-line-3.png"
+  width="1380"
+  height="654"
+  className="rounded-md border [&:not(:first-child)]:mt-6"
+/>
+
+## 示例
+
+[AnalyCHART](/zh) 为每种图表样式都提供了一些典型的[示例](/zh/examples)，可以找到您期望效果的类似的图表。点击「尝试」，了解这些图表的配置选项，也可以直接在打开的页面替换数据，同样可以完成绘制。
+
+比如「Line Chart - Label」这个示例
+
+<Image
+  src="/images/example-line-label.png"
+  width="1380"
+  height="687"
+  className="rounded-md border [&:not(:first-child)]:mt-6"
+/>
+
+您可以在此基础上，调整一些选项，以达到您期望的效果。注意，因为示例中的一些样式用到了高级模式中的选项，因此您可能需要切换到高级模式下来了解它的配置。
 
 ## 下一步
 

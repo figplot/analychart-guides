@@ -1,0 +1,77 @@
+---
+title: 导入数据
+description: 准备数据并导入。
+---
+
+[AnalyCHART](/zh) 使用的数据为表结构，支持三种数据导入的方法。
+
+可以通过如下的面板进行导入：
+
+<Image
+  src="/images/uploader.png"
+  width="620"
+  height="213"
+  className="rounded-md border [&:not(:first-child)]:mt-6"
+/>
+
+## 从本地文件导入
+
+从本地文件导入时，支持JSON/CSV/Excel三种格式的文件，可以通过拖拽或者点击按钮来上传。
+
+对于JSON，格式为数组，数组中每个元素为一行，使用字典表示。样式如下：
+
+```json
+[
+  {"field1": value, "field2": value, ...},
+  {"field1": value, "field2": value, ...},
+  ...
+]
+```
+
+例如：
+
+```json
+[
+  { "month": "January", "desktop": 186, "mobile": 80 },
+  { "month": "February", "desktop": 305, "mobile": 200 },
+  { "month": "March", "desktop": 237, "mobile": 120 },
+  { "month": "April", "desktop": 73, "mobile": 190 },
+  { "month": "May", "desktop": 209, "mobile": 130 },
+  { "month": "June", "desktop": 214, "mobile": 140 }
+]
+```
+
+CSV和Excel支持通用的格式。
+
+## 输入文本导入
+
+也可以直接在对话框输入文本来导入数据，点击「从文本」按钮，在弹出的对话框中，填入CSV或者JSON格式的数据。
+
+<Image
+  src="/images/import-from-text.png"
+  width="759"
+  height="472"
+  className="rounded-md border [&:not(:first-child)]:mt-6"
+/>
+
+## 通过URL导入
+
+还可以从网络URL导入数据，URL需要可访问并且返回所需格式的数据。
+
+<Image
+  src="/images/import-from-url.png"
+  width="506"
+  height="237"
+  className="rounded-md border [&:not(:first-child)]:mt-6"
+/>
+
+## 数据的查看、更新、删除
+
+数据导入后，显示为一个数据条。点击数据条可以查看数据内容，通过数据条后面的更新和删除按钮可以更新或者删除导入的数据。
+
+<Image
+  src="/images/data-operation.png"
+  width="713"
+  height="179"
+  className="rounded-md border [&:not(:first-child)]:mt-6"
+/>
